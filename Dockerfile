@@ -17,15 +17,16 @@ RUN mkdir /var/run/sshd
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential libfuse-dev libcurl4-openssl-dev libxml2-dev mime-support automake libtool wget tar
 
+# download the 1.78 version of s3fs-fuse
 RUN wget https://github.com/s3fs-fuse/s3fs-fuse/archive/v1.78.tar.gz -O /usr/src/v1.78.tar.gz
 
+# build it
 RUN tar xvz -C /usr/src -f /usr/src/v1.78.tar.gz
-
 RUN cd /usr/src/s3fs-fuse-1.78 && ./autogen.sh && ./configure --prefix=/usr && make && make install
 
 
+# creating an chroot SFTP enviroment 
 RUN mkdir /s3_app/
-
 ADD /s3passwd /s3_app/s3passwd
 RUN chmod 600 /s3_app/s3passwd
 
