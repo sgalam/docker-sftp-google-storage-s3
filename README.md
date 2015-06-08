@@ -14,7 +14,7 @@ docker run -d -p 11022:22 --cap-add mknod --cap-add sys_admin --device=/dev/fuse
 ```
 # configuration 
 - into s3passwd (to store your bucketname and acess keys) 
-- in the ENV values of Dockerfile
+- in ENV values of Dockerfile
 
 # debug
 to attach the started container and debug what is happening:
