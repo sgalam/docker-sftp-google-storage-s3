@@ -1,5 +1,5 @@
 # docker-sftp-google-storage-s3
-this docker container mount your GoogleStorage/S3 bucket into a folder exposed via SFTP. Afterthat you can SFTP directly your bucker!
+this docker container mount your GoogleStorage/S3 bucket into a folder exposed via chroot SFTP. Afterthat you can SFTP directly your bucket!
 
 # to build the image
 ```
