@@ -38,7 +38,7 @@ RUN mkdir /backup_user/
 
 RUN /usr/sbin/adduser --disabled-password --gecos "" --shell /bin/false --home /backup_user/ $SFTP_USER
 
-RUN echo "$SFTP_USER:SFTP_PASSWORD" | chpasswd $SFTP_USER
+RUN echo "$SFTP_USER:$SFTP_PASSWORD" | chpasswd $SFTP_USER
 
 RUN mkdir $YOUR_MOUNT_POINT
 RUN chown $SFTP_USER $YOUR_MOUNT_POINT
